@@ -52,7 +52,7 @@ var sound, amplitude;
 
 function preload()
 {
-	sound=loadSound('asset/gyosil_idea.mp3');
+//	sound=loadSound('asset/gyosil_idea.mp3');
 	var lyricArr=split(lyrics, ' ');
 	for(var i=0;i<lyricArr.length;i++)
 	{
@@ -60,10 +60,12 @@ function preload()
 	}
 }
 function setup() { 
-  createCanvas(600, 600);
+	sound=new p5.AudioIn();
+	sound.start();
+  createCanvas(windowWidth,windowHeight);
 	noStroke();
 	amplitude=new p5.Amplitude();
-	sound.loop();
+//	sound.loop();
 } 
 
 function draw() { 
